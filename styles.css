@@ -1,24 +1,152 @@
 body {
     background-color: black;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    position: relative;
+}
+
+.flower {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin-bottom: 200px;
 }
 
 .petal {
-    background-color: crimson;
-}
-
-.petal.big_bud {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 120% / 50%;
     width: 50px;
     height: 100px;
+    background: linear-gradient(to bottom, rgb(255, 0, 51), transparent);
 }
 
-.petal.big_bud.right {
-    text-align: right;
+.small {
+    border-radius: 100% / 110%;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    text-align: center;
+.big2 {
+    width: 70px;
+    height: 120px;
+    background: linear-gradient(to bottom, rgb(255, 17, 64), transparent);
+}
+
+.big3 {
+    width: 70px;
+    height: 140px;
+    background: linear-gradient(to bottom, rgb(208, 3, 44), transparent);
+}
+
+.big4 {
+    width: 80px;
+    height: 150px;
+    background: linear-gradient(to bottom, rgb(154, 1, 32), transparent);
+}
+
+.stem-cover {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%;
+    top: 65%;
+    left: 35%;
+    z-index: 2;
+}
+
+.stem {
+    width: 200px;
+    height: 400px;
+    background: linear-gradient(to bottom, rgb(63, 107, 55) 30%, transparent 70%);
+    border-radius: 100%;
+    transform-origin: bottom center;
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    rotate: -10deg;
+    z-index: 2;
+}
+
+
+
+.black {
+    background: black;
+    left: 15%;
+}
+
+.base {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent 45%, rgb(63, 107, 55));
+    border-radius: 50px;
+    transform-origin: bottom center;
+    position: absolute;
+    top: 65%;
+    left: 48%;
+    rotate: -35deg;
+    z-index: 2;
+}
+
+.small-base {
+    width: 30px;
+    height: 30px;
+    top: 65%;
+    left: 20%;
+    rotate: 40deg;
+
+}
+
+.petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 90% / 95%;
+    opacity: 0;
+    animation: petal-appear 1s ease-out forwards;
+    z-index: 5;
+}
+
+.small-form {
+    top: 68%;
+    left: -35%;
+    rotate: 20deg;
+    width: 120px;
+    height: 250px;
+    z-index: 0;
+}
+
+.small-form-black {
+    background: black;
+    left: -30%;
+    z-index: 1;
+}
+
+@keyframes petal-appear {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(-5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(var(--rotate));
+    }
+}
+
+.petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 90% / 95%;
+    opacity: 0;
+    animation: petal-appear 4s ease-out forwards;
 }
